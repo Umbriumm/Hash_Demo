@@ -1,4 +1,7 @@
-public class DJB2Hash {
+
+// TODO: update the hash function
+
+public class HashFN {
     public static long Hash(String str, int tableSize){
         long hash = 5381;
         for(int i = 0; i <= str.length()-1; i++){
