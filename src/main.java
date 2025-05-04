@@ -1,7 +1,9 @@
 public class main {
     public static void main(String[] args) {
+        QuadraticProbing qc=new QuadraticProbing();
 
-        System.out.println(HashFN.Hash("HashString", 10));
+        String[] values = {"Apple", "banana", "Cherry", "apricot", "grape", "Mango", "Peach"};
+        qc.quadraticProbingInsert(values);
 
     }
 }
