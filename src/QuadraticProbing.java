@@ -16,7 +16,7 @@ public class QuadraticProbing {
 
 
         for (String value : values) {
-            int hash = HashFN.Hash(value);
+            int hash = (int) (HashFN.Hash(value) % tablesize);
             int probes = 1;
 
             if (HashedTable[hash] == null) {

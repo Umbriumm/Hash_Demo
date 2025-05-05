@@ -1,13 +1,17 @@
 
-// TODO: update the hash function
-
 public class HashFN {
-    public static int Hash(String str){
-        long hash = 5381;
-        for(int i = 0; i <= str.length()-1; i++){
-            char c = str.charAt(i);
-            hash = ((hash << 5) + hash) + c;
+    public static long Hash(String str){
+        str = str.toLowerCase();
+        int m = 1000000009;
+        int b = 31;
+        long hash = 0;
+        long power = 1;
+        int n = str.length();
+        for(int i = 0; i <= str.length() - 1; i++){
+            int ascii = str.charAt(i);
+            hash = (hash + ascii * power) % m;
+            power = (power * b) % m;
         }
-        return (int)(Math.abs(hash) % 7);
+        return hash;
     }
 }
