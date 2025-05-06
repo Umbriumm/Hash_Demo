@@ -1,12 +1,12 @@
 import java.util.*;
 
-public class SeparatingChain {
+public class SeparateChaining {
     private List<String>[] table;
     private int tableSize = 10;
     private int collisionCount = 0;
 
     @SuppressWarnings("unchecked")
-    public SeparatingChain() {
+    public SeparateChaining() {
         table = new LinkedList[tableSize];
         for (int i = 0; i < tableSize; i++) {
             table[i] = new LinkedList<>();

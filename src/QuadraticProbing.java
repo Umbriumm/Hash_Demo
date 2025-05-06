@@ -45,12 +45,9 @@ public class QuadraticProbing {
 
         System.out.println("\n📦 Final Hash Table:");
         for (int i = 0; i < tablesize; i++) {
-            System.out.println("[" + i + "]: " + (HashedTable[i] != null ? HashedTable[i] : "empty"));
+            System.out.println("[" + i + "]: " + (HashedTable[i] != null ? HashedTable[i] : "\033[41;1;97mEmpty\033[0m"));
         }
 
 
     }
 }
-
-
-

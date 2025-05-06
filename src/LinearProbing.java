@@ -56,7 +56,7 @@ public class LinearProbing {
 
         System.out.println("\n📦 Final Hash Table:");
         for (int i = 0; i < tableSize; i++) {
-            System.out.println("[" + i + "]: " + (hashTable[i] != null ? "\"" + hashTable[i] + "\"" : "empty"));
+            System.out.println("[" + i + "]: " + (hashTable[i] != null ? "\"" + hashTable[i] + "\"" : "\033[41;1;97mEmpty\033[0m"));
         }
     }
 }
