@@ -11,14 +11,13 @@ public class LinearProbing {
     }
 
     // Fixed naming convention (camelCase)
-    public void linearInsert(String[] values) {
+    public void linearInsert(String[] values, int tableSize) {
         // Added null check for values
         if (values == null || values.length == 0) {
             System.out.println("Empty array provided. Nothing to insert.");
             return;
         }
 
-        int tableSize = values.length;
         String[] hashTable = new String[tableSize];
 
         for (String value : values) {

@@ -10,13 +10,13 @@ public class DoubleHashing {
         return jump;
     }
 
-    public void DoubleHashInsert(String[] data) {
+    public void DoubleHashInsert(String[] data, int tableSize) {
         // Edit the size to "findTableSize(data.length)" for the nearest prime (iterates over each index)
-        HashTable = new String[findTableSize(data.length)];
+        HashTable = new String[tableSize];
         for (int i = 0; i <= data.length - 1; i++ ) {
             int j = 0;
             String s = data[i];
-            int index = (int) ((HashFN.Hash(s) + j * h2(s)) % (HashTable.length));
+            int index = (int) ((HashFN.Hash(s) + j * h2(s)) % (tableSize));
 
             if (HashTable[index] == null){
                 Insert(s, index);
@@ -28,10 +28,10 @@ public class DoubleHashing {
                 while (HashTable[index] != null) {
                     probes++;
                     j++;
-                    System.out.println("🗿 index (" + index + ") is occupied [Total: " + Collisions + "] [🔄️ Probes: "+probes+"]");
-                    index = (int) ((HashFN.Hash(s) + j * h2(s)) % (HashTable.length));
+//                    System.out.println("🗿 index (" + index + ") is occupied [Total: " + Collisions + "] [🔄️ Probes: "+probes+"]");
+                    index = (int) ((HashFN.Hash(s) + j * h2(s)) % (tableSize));
 
-                    if (j >= HashTable.length){
+                    if (j >= tableSize){
                         System.out.println("Failed to insert string \""+s+"\"");
                         break;
                     }

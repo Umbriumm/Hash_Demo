@@ -9,6 +9,15 @@ public class main {
         DoubleHashing ds = new DoubleHashing();
         SeparateChaining sc = new SeparateChaining();
 
+        System.out.println("Enter the HashMap Size: ");
+        Scanner scc = new Scanner(System.in);
+        int tableSize = scc.nextInt();
+
+        if (tableSize <= 0) {
+            System.out.println("Size can't be negative / 0");
+            System.exit(1);
+        }
+
         String[] values = readFile();
 
         System.out.println("Select a hashing method:");
@@ -25,22 +34,22 @@ public class main {
         switch (option) {
             case 1:
                 LinearProbing lp = new LinearProbing();
-                lp.linearInsert(values);
+                lp.linearInsert(values, tableSize);
                 break;
 
             case 2:
                 QuadraticProbing qp = new QuadraticProbing();
-                qp.quadraticProbingInsert(values);
+                qp.quadraticProbingInsert(values, tableSize);
                 break;
 
             case 3:
                 SeparateChaining sch = new SeparateChaining();
-                sch.SeparatingChainInsert(values);
+                sch.SeparatingChainInsert(values, tableSize);
                 break;
 
             case 4:
                 DoubleHashing dh = new DoubleHashing();
-                dh.DoubleHashInsert(values);
+                dh.DoubleHashInsert(values, tableSize);
                 break;
 
             default:
@@ -68,7 +77,7 @@ public class main {
 
 
          String[] values = wordList.toArray(new String[0]);
-        System.out.println("➡️ initial size = " + values.length);
+        System.out.println("➡️ Number of Words = " + values.length);
         return values;
     }
 }

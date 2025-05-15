@@ -2,18 +2,24 @@ import java.util.*;
 
 public class SeparateChaining {
     private List<String>[] table;
-    private int tableSize = 10;
+    private int tableSize;
     private int collisionCount = 0;
 
-    @SuppressWarnings("unchecked")
-    public SeparateChaining() {
+    // Moved the list initialization into the insert function to prevent an
+    // IndexOutOfBounds
+//    @SuppressWarnings("unchecked")
+//    public SeparateChaining() {
+//
+//    }
+
+    public void SeparatingChainInsert(String[] words, int tableSize) {
+        this.tableSize = tableSize;
+
         table = new LinkedList[tableSize];
         for (int i = 0; i < tableSize; i++) {
             table[i] = new LinkedList<>();
         }
-    }
 
-    public void SeparatingChainInsert(String[] words) {
         for (String word : words) {
             int index = (int)(HashFN.Hash(word) % tableSize);
 

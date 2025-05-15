@@ -10,8 +10,7 @@ public class QuadraticProbing {
         }
     }
 
-    public void quadraticProbingInsert(String[] values) {
-        int tablesize = values.length;
+    public void quadraticProbingInsert(String[] values, int tablesize) {
         String[] HashedTable = new String[tablesize];
 
 
