@@ -8,10 +8,24 @@ public class main {
         QuadraticProbing qc = new QuadraticProbing();
         DoubleHashing ds = new DoubleHashing();
         SeparateChaining sc = new SeparateChaining();
-
-        System.out.println("Enter the HashMap Size: ");
         Scanner scc = new Scanner(System.in);
-        int tableSize = scc.nextInt();
+        int tableSize = 0;
+
+
+        System.out.println("(?) Do you wish to specify a size for the HashMap or use the default size? (52)");
+        System.out.println("[1] Specify \n" +
+                "[2] Default");
+        int option1 = scc.nextInt();
+        if (option1 == 2){
+            tableSize = 52;
+        } else if (option1 == 1){
+            System.out.println("(?) Enter the size of the HashMap");
+            tableSize = scc.nextInt();
+        } else {
+            System.out.println("Invalid Option");
+            System.exit(-1);
+        }
+
 
         if (tableSize <= 0) {
             System.out.println("Size can't be negative / 0");
@@ -20,7 +34,7 @@ public class main {
 
         String[] values = readFile();
 
-        System.out.println("Select a hashing method:");
+        System.out.println("(?) Select a hashing method:");
         System.out.println(
                 "[1] Linear Probing" + "\n"
                         + "[2] Quadratic Probing" + "\n"
