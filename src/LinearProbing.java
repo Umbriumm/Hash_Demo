@@ -1,5 +1,4 @@
 public class LinearProbing {
-    // Fixed the typo and naming convention in the class name
     public static class LinearProbingResult {
         int index;
         int steps;
@@ -10,7 +9,6 @@ public class LinearProbing {
         }
     }
 
-    // Fixed naming convention (camelCase)
     public void linearInsert(String[] values, int tableSize) {
         // Added null check for values
         if (values == null || values.length == 0) {
