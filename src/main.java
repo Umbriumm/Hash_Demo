@@ -86,7 +86,7 @@ public class main {
             }
 
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error: File not Found!");
         }
 
 
